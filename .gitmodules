@@ -1,0 +1,3 @@
+[submodule "CrudAttempt"]
+	path = CrudAttempt
+	url = https://github.com/Yeness/CrudAttempt.git
