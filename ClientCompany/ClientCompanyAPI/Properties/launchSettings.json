@@ -16,7 +16,8 @@
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5194",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DataBaseConnection": "Data Source=D:\\Projeler\\Veridabanı\\Company\\Company.db;Version=3;"
       }
     },
     "IIS Express": {

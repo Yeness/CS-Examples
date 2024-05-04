@@ -1,22 +1,24 @@
 ﻿using ClientCompanyCore.BaseEntity;
+using ClientCompanyUtils.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClientCompanyBusiness.Repository
 {
     public class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
     {
-        private readonly AddDbContext _dbContext;
+        private readonly SqliteDbContext _dbContext;
 
-        public GenericRepository(AddDbContext dbContext)
+        public GenericRepository(SqliteDbContext dbContext)
         {
             _dbContext = dbContext;
         }
         public IQueryable<TEntity> GetAll()
         {
-            return _dbContext.GetAll<TEntity>().AsNoTracking();
+            return _dbContext.Set<TEntity>().AsNoTracking();
         }
         public async Task<TEntity> GetById(int id)
         {
-            return await _dbContext.Set<TEntity>().AsNoTracking().FirstOrDefaultAsync(e => e.Id == id);
+            return await _dbContext.Set<TEntity>().AsNoTracking().FirstOrDefaultAsync(e => e.Guid.Equals(id));
         }
         public async Task Create(TEntity entity)
         {

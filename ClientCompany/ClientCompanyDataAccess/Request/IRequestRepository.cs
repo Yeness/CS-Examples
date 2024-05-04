@@ -2,7 +2,7 @@
 
 namespace ClientCompanyDataAccess.Request
 {
-    internal interface IRequestRepository : IRepository<Request>
+    internal interface IRequestRepository : IRepository<ClientCompanyData.Entities.Request>
     {
         Task<string> GetRequest();
     }
