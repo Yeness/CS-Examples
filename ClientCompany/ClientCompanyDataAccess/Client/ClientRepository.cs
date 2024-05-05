@@ -11,9 +11,9 @@ namespace ClientCompanyDataAccess.Client
 
         }
 
-        public Task Create(ClientCompanyData.Entities.Client entity)
+        public async Task Create(ClientCompanyData.Entities.Client entity)
         {
-            throw new NotImplementedException();
+            await Create(entity);
         }
 
         public async Task<string> GetClient()
@@ -21,19 +21,24 @@ namespace ClientCompanyDataAccess.Client
             return await GetAll().Select(x => x.Guid.ToString()).FirstOrDefaultAsync();
         }
 
-        public Task Update(int id, ClientCompanyData.Entities.Client entity)
+        public async Task Update(int id, ClientCompanyData.Entities.Client entity)
         {
-            throw new NotImplementedException();
+            await Update(id, entity);
+        }
+
+        public async Task Delete(int id)
+        {
+            await Delete(id);
         }
 
         IQueryable<ClientCompanyData.Entities.Client> IRepository<ClientCompanyData.Entities.Client>.GetAll()
         {
-            throw new NotImplementedException();
+            return GetAll();
         }
 
         Task<ClientCompanyData.Entities.Client> IRepository<ClientCompanyData.Entities.Client>.GetById(int id)
         {
-            throw new NotImplementedException();
+            return GetById(id);
         }
     }
 }

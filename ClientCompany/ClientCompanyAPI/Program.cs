@@ -1,5 +1,7 @@
+using ClientCompanyBusiness.Repository;
 using ClientCompanyUtils.Context;
 using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<SqliteDbContext>(options => options.UseSqlite(Environment.GetEnvironmentVariable("DatabaseConnection")));
+
+builder.Services.AddScoped<IClientRepository, ClientRepository>();
+builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IRequestRepository, RequestRepository>();
+builder.Services(typeof(IRepository<>), typeof(GenericRepository));
 
 var app = builder.Build();
 
