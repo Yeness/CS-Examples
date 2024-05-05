@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ClientCompanyDataAccess.Request
 {
-    internal class RequestRepository : GenericRepository<ClientCompanyData.Entities.Request>, IRequestRepository
+    public class RequestRepository : GenericRepository<ClientCompanyData.Entities.Request>, IRequestRepository
     {
         public RequestRepository(SqliteDbContext dbContext) : base(dbContext)
         {

@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Abp.Web.Common" Version="9.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
   </ItemGroup>
 
   <ItemGroup>

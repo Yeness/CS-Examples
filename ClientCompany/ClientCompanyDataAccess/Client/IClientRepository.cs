@@ -2,8 +2,9 @@
 
 namespace ClientCompanyDataAccess.Client
 {
-    internal interface IClientRepository : IRepository<ClientCompanyData.Entities.Client>
+    public interface IClientRepository : IRepository<ClientCompanyData.Entities.Client>
     {
+        Task Create(ClientCompanyData.Entities.Employee employees);
         Task<string> GetClient();
     }
 }

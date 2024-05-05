@@ -1,4 +1,8 @@
 using ClientCompanyBusiness.Repository;
+using ClientCompanyDataAccess.Client;
+using ClientCompanyDataAccess.Company;
+using ClientCompanyDataAccess.Employee;
+using ClientCompanyDataAccess.Request;
 using ClientCompanyUtils.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,7 +22,7 @@ builder.Services.AddScoped<IClientRepository, ClientRepository>();
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IRequestRepository, RequestRepository>();
-builder.Services(typeof(IRepository<>), typeof(GenericRepository));
+builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
 var app = builder.Build();
 

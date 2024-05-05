@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ClientCompanyDataAccess.Company
 {
-    internal class CompanyRepository : GenericRepository<ClientCompanyData.Entities.Company>, ICompanyRepository
+    public class CompanyRepository : GenericRepository<ClientCompanyData.Entities.Company>, ICompanyRepository
     {
         public CompanyRepository(SqliteDbContext dbContext) : base(dbContext)
         {

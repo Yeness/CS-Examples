@@ -2,7 +2,7 @@
 
 namespace ClientCompanyDataAccess.Company
 {
-    internal interface ICompanyRepository : IRepository<ClientCompanyData.Entities.Company>
+    public interface ICompanyRepository : IRepository<ClientCompanyData.Entities.Company>
     {
         Task<string> GetCompany();
     }
