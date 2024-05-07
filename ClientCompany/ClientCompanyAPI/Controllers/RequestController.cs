@@ -8,7 +8,7 @@ namespace ClientCompanyController.Controller
     [Route("/request")]
     public class RequestController : ControllerBase
     {
-        private readonly IRequestRepository _repository;
+        public readonly IRequestRepository _repository;
 
         public RequestController(IRequestRepository repository)
         {

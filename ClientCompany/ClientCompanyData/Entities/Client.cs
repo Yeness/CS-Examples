@@ -9,5 +9,8 @@ namespace ClientCompanyData.Entities
         public string Email { get; set; } 
         public int PNumber { get; set; }
         public string Sex { get; set; }
+
+        public ICollection<ClientCompany> ClientCompanies { get; set; }
+        public ICollection<RequestClient> RequestClients { get; set; }
     }
 }

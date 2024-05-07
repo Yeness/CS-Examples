@@ -40,5 +40,10 @@ namespace ClientCompanyDataAccess.Client
         {
             return GetById(id);
         }
+        //!
+        public Task Create(ClientCompanyData.Entities.Employee employees)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

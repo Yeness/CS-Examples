@@ -8,7 +8,7 @@ namespace ClientCompanyController.Controller
     [Route("/client")]
     public class ClientController : ControllerBase
     {
-        private readonly IClientRepository _repository;
+        public readonly IClientRepository _repository;
         public ClientController(IClientRepository repository)
         {
             _repository = repository;

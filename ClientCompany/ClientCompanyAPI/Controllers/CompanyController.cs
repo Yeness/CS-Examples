@@ -8,7 +8,7 @@ namespace ClientCompanyController.Controller
     [Route("/company")]
     public class CompanyController : ControllerBase
     {
-        private readonly ICompanyRepository _repository;
+        public readonly ICompanyRepository _repository;
 
         public CompanyController(ICompanyRepository repository)
         {

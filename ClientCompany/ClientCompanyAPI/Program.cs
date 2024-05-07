@@ -33,6 +33,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+using (IServiceScope serviceScope = app.Services.CreateScope())
+{
+    SqliteDbContext context = serviceScope.ServiceProvider.GetRequiredService<SqliteDbContext>();
+    context.Database.Migrate();
+}
+
 app.UseAuthorization();
 
 app.MapControllers();
